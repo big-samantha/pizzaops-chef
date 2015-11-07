@@ -1,6 +1,6 @@
 {
   "name": "pizzaops-chef",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "pizzaops",
   "summary": "Sometimes you just need puppet to be fucking chef for a minute. Extends the exec type to take arbitrary ruby code.",
   "license": "WTFPL",
