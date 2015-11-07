@@ -1,3 +1,9 @@
+# pizzaops-chef
+
+Because sometimes you really just need Puppet to be Chef for one fucking minute.
+
+A `ruby` provider for the `exec` resource.
+
 #### Table of Contents
 
 1. [Overview](#overview)
@@ -8,7 +14,7 @@
 
 ## Overview
 
--> A `ruby` provider for the `exec` type, to run arbitrary Ruby code on Puppet agent-managed nodes. <-
+-> `pizzaops-chef is a `ruby` provider for the `exec` type, to enable running arbitrary Ruby code on Puppet agent-managed nodes. <-
 
 -> Yes. I know. <-
 
