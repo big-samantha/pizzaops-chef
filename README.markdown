@@ -41,7 +41,7 @@ exec { 'evil ruby script':
 }
 ```
 
-Like any exec, it should be combined with `onlyif`, `unless`, etc., to make it idempotent.
+Like any `exec`, it should be combined with `onlyif`, `unless`, etc., to make it idempotent.
 
 ## Limitations
 
