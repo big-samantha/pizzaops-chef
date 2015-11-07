@@ -14,11 +14,10 @@ A `ruby` provider for the `exec` resource.
 
 ## Overview
 
--> `pizzaops-chef is a `ruby` provider for the `exec` type, to enable running arbitrary Ruby code on Puppet agent-managed nodes. <-
+`pizzaops-chef` is a `ruby` provider for the `exec` type, to enable running arbitrary Ruby code on Puppet agent-managed nodes.
 
--> Yes. I know. <-
-
--> ![Hail Satan!](https://encyclopediasatanica.files.wordpress.com/2013/08/baphometpentagram.jpg) <-
+<center>Yes. I know.</center>
+<div style="text-align:center"><img src ="https://encyclopediasatanica.files.wordpress.com/2013/08/baphometpentagram.jpg" /></div>  
 
 If you use this, you should probably feel bad about it.
 
