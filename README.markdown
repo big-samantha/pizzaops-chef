@@ -1,60 +1,49 @@
 #### Table of Contents
 
 1. [Overview](#overview)
-2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with chef](#setup)
-    * [What chef affects](#what-chef-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with chef](#beginning-with-chef)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-5. [Limitations - OS compatibility, etc.](#limitations)
-6. [Development - Guide for contributing to the module](#development)
+1. [Setup - The basics of getting started with chef](#setup)
+1. [Usage - Configuration options and additional functionality](#usage)
+1. [Limitations - OS compatibility, etc.](#limitations)
+1. [Development - Guide for contributing to the module](#development)
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves. This is your 30 second elevator pitch for your module. Consider including OS/Puppet version it works with.       
+-> A `ruby` provider for the `exec` type, to run arbitrary Ruby code on Puppet agent-managed nodes. <-
 
-## Module Description
+-> Yes. I know. <-
 
-If applicable, this section should have a brief description of the technology the module integrates with and what that integration enables. This section should answer the questions: "What does this module *do*?" and "Why would I use it?"
+-> ![Hail Satan!](https://encyclopediasatanica.files.wordpress.com/2013/08/baphometpentagram.jpg) <-
 
-If your module has a range of functionality (installation, configuration, management, etc.) this is the time to mention it.
+If you use this, you should probably feel bad about it.
 
-## Setup
+Like all good hacky bullshit projects, there are no tests.
 
-### What chef affects
+## Setup 
 
-* A list of files, packages, services, or operations that the module will alter, impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form. 
+Requires you to either have an executable `ruby` binary in your path, or to be running Puppet Enterprise. The `ruby` provider will favor PE's built in Ruby over system Ruby, because we know it works.
 
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled, etc.), mention it here. 
-
-### Beginning with chef
-
-The very basic steps needed for a user to get the module up and running. 
-
-If your most recent release breaks compatibility or requires particular steps for upgrading, you may wish to include an additional section here: Upgrading (For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing the fancy stuff with your module here. 
+```puppet
+# Load ruby script from `files` subdirectory of `mymodule` module.
+$script = file('mymodule/myscript.rb') 
 
-## Reference
+# Run the script
+exec { 'evil ruby script':
+  command  => $script,
+  provider => ruby,
+}
+```
 
-Here, list the classes, types, providers, facts, etc contained in your module. This section should include all of the under-the-hood workings of your module so people know what the module is touching on their system but don't need to mess with things. (We are working on automating this section!)
+Like any exec, it should be combined with `onlyif`, `unless`, etc., to make it idempotent.
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+Currently only supports \*nix systems. There's no reason it can't work on Windows, but I haven't gotten around to trying it yet.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them know what the ground rules for contributing are.
+Fork it, make a pull request. The usual applies.
 
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should consider using changelog). You may also add any additional sections you feel are necessary or important to include here. Please use the `## ` header. 
+<a href="http://www.wtfpl.net/"><img src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png" width="80" height="15" alt="WTFPL" /></a>
