@@ -1,13 +1,15 @@
 {
   "name": "pizzaops-chef",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "pizzaops",
   "summary": "Sometimes you just need puppet to be fucking chef for a minute. Extends the exec type to take arbitrary ruby code.",
   "license": "WTFPL",
   "source": "git@github.com:pizzaops/pizzaops-chef.git",
   "project_page": "https://github.com/pizzaops/pizzaops-chef",
   "issues_url": "https://github.com/pizzaops/pizzaops-chef/issues",
-  "dependencies": [ ],
+  "dependencies": [
+
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "Debian",
